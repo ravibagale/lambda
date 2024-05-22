@@ -1,0 +1,27 @@
+To create a Lambda layer for the requests library on your MacBook, you can follow these steps:
+
+Create a directory for the layer:
+
+bash
+Copy code
+mkdir my-layer
+cd my-layer
+Set up a directory structure that Lambda layers expect:
+
+bash
+Copy code
+mkdir -p python/lib/python3.9/site-packages
+Adjust python3.9 to match the Python version your Lambda function uses.
+
+Install the requests library into this directory:
+
+bash
+Copy code
+pip install requests -t python/lib/python3.9/site-packages/
+Zip the content of the layer directory:
+
+bash
+Copy code
+zip -r9 my-layer.zip python
+Upload the layer to AWS Lambda:
+You can do this via the AWS Management Console or the AWS CLI. Here’s how you can do it using the AWS CLI:
